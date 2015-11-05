@@ -4,9 +4,9 @@ Our modification of SystemUserSpawner. We basically subclass it and modify to
 our needs.
 
 Basic difference is that we don't want to put homes of users (in our case
-students of our programming course) inside /home/{username} but rather inside
+students of our programming course) inside ``/home/{username}`` but rather inside
 some folder of a host user that starts hub. Default is set to be:
-"/home/{host_username}/spawned_users/{username}"
+``/home/{host_username}/spawned_users/{username}``
 
 Later we use host's user_id for users inside container.
 During start procedure we make sure that students folders on the user side
