@@ -1,4 +1,4 @@
-# MesoSpawner
+# VolumeSpawner
 
 Our modification of SystemUserSpawner. We basically subclass it and modify to
 our needs.
@@ -61,7 +61,7 @@ cd ..
 
 # Running
 
-build ``mesouser`` image
+build ``volumeuser`` image
 ```
 docker build -t jupyter/volumeuser volumeuser
 ```
