@@ -16,7 +16,7 @@ class VolumeSpawner(SystemUserSpawner):
     container_image = Unicode("jupyter/volumeuser", config=True)
     container_prefix = Unicode("volumespawner", config=True)
 
-    homedir = Unicode("/home/jupyter", config=True)
+    container_username = Unicode("/home/jupyter", config=True)
     host_username = Unicode(getpass.getuser(), config=True)
 
     host_homedir_format_string = Unicode(
@@ -30,6 +30,14 @@ class VolumeSpawner(SystemUserSpawner):
             """
         )
     )
+
+    @property
+    def homedir(self):
+        """
+        Path to the user's home directory in the docker image.
+        """
+        return "/home/{container_username}".format(
+                container_username=self.container_username)
 
     @property
     def host_homedir(self):
