@@ -16,7 +16,7 @@ class VolumeSpawner(SystemUserSpawner):
     container_image = Unicode("jupyter/volumeuser", config=True)
     container_prefix = Unicode("volumespawner", config=True)
 
-    container_username = Unicode("/home/jupyter", config=True)
+    container_username = Unicode("jupyter", config=True)
     host_username = Unicode(getpass.getuser(), config=True)
 
     host_homedir_format_string = Unicode(
